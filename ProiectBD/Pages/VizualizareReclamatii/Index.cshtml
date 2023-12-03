@@ -1,0 +1,35 @@
+﻿@page "/VizualizareReclamatii"
+@using ProiectBD.Data;
+@using ProiectBD.Pages.VizualizareReclamatii;
+@model IndexModel
+@{
+    ViewData["Title"] = "Vizualizare reclamatii";
+    ViewData["Description"] = "Lista tuturor reclamatiilor";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-uppercase">@ViewData["Title"]</h1>
+    <h2>@ViewData["Description"]</h2>
+
+    <div class="mt-5 table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Id client</th>
+                    <th scope="col">Informatii</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var reclamatie in Model.Reclamatii)
+                {
+                    <tr>
+                        <td>@reclamatie.Id</td>
+                        <td>@reclamatie.IdClient</td>
+                        <td>@reclamatie.Informatii</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

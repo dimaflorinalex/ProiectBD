@@ -1,0 +1,39 @@
+﻿@page "/ClientiTopConsumMic"
+@using ProiectBD.Data;
+@using ProiectBD.Pages.ClientiTopConsumMic;
+@model IndexModel
+@{
+    ViewData["Title"] = "Clasament clienti consum sub 500 kWh";
+    ViewData["Description"] = "Lista tuturor clientilor care au consumat sub 500 kWh pana la momentul actual";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-uppercase">@ViewData["Title"]</h1>
+    <h2>@ViewData["Description"]</h2>
+
+    <div class="mt-5 table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nume</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Telefon</th>
+                    <th scope="col">Tip persoana</th>
+                    <th scope="col">Consum</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var client in Model.Clienti)
+                {
+                    <tr>
+                        <td>@client.Nume</td>
+                        <td><a href="mailto:@client.Email" class="text-decoration-none text-muted">@client.Email</a></td>
+                        <td><a href="tel:@client.Telefon" class="text-decoration-none text-muted">@client.Telefon</a></td>
+                        <td>@client.TipPersoana</td>
+                        <td>@client.Consum</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

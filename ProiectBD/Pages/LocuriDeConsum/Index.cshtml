@@ -1,0 +1,71 @@
+﻿@page "/LocuriDeConsum"
+@using ProiectBD.Data;
+@using ProiectBD.Pages.LocuriDeConsum;
+@model IndexModel
+@{
+    ViewData["Title"] = "Locuri de consum";
+    ViewData["Description"] = "Lista tuturor locurilor de consum";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-uppercase">@ViewData["Title"]</h1>
+    <h2>@ViewData["Description"]</h2>
+
+    <div class="mt-5 table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Id client</th>
+                    <th scope="col">Judet</th>
+                    <th scope="col">Localitate</th>
+                    <th scope="col">Strada</th>
+                    <th scope="col">Numar strada</th>
+                    <th scope="col">Cod postal</th>
+                    <th scope="col">Bloc</th>
+                    <th scope="col">Scara</th>
+                    <th scope="col">Etaj</th>
+                    <th scope="col">Apartament</th>
+                    <th scope="col" colspan="2">Actiune</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var locDeConsum in Model.LocuriDeConsum)
+                {
+                    <tr>
+                        <td>@locDeConsum.Id</td>
+                        <td>@locDeConsum.IdClient</td>
+                        <td>@locDeConsum.Judet</td>
+                        <td>@locDeConsum.Localitate</td>
+                        <td>@locDeConsum.Strada</td>
+                        <td>@locDeConsum.NrStrada</td>
+                        <td>@locDeConsum.CodPostal</td>
+                        <td>@locDeConsum.Bloc</td>
+                        <td>@locDeConsum.Scara</td>
+                        <td>@locDeConsum.Etaj</td>
+                        <td>@locDeConsum.Apartament</td>
+                        <td><a asp-page="/LocuriDeConsum/Modifica" asp-route-id="@locDeConsum.Id" class="text-decoration-none text-success">Modifica</a></td>
+                        <td><a asp-page="/LocuriDeConsum/Sterge" asp-route-id="@locDeConsum.Id" class="text-decoration-none text-danger">Sterge</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <form class="d-flex gap-2" method="get">
+        <select class="form-select" name="orderBy" id="inputOrderBy" title="Sorteaza dupa coloana">
+            <option value="NESORTAT" selected="@(Model.OrderBy == "NESORTAT" ? "selected" : null)">NESORTAT</option>
+            @foreach (var column in LocDeConsum.Columns.SortableColumns)
+            {
+                <option value="@column" selected="@(Model.OrderBy == @column ? "selected" : null)">@column</option>
+            }
+        </select>
+
+        <select class="form-select" name="orderDir" id="inputOrderDir" title="Sensul sortarii">
+            <option value="ASC" selected="@(Model.OrderDir == "ASC" ? "selected" : null)">CRESCATOR</option>
+            <option value="DESC" selected="@(Model.OrderDir == "DESC" ? "selected" : null)">DESCRESCATOR</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary">Sorteaza</button>
+    </form>
+</div>

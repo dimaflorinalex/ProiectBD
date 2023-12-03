@@ -1,0 +1,52 @@
+﻿@page "/Contracte/{id:int}/Modifica"
+@using ProiectBD.Enums;
+@using ProiectBD.Pages.Contracte;
+@model ModificaModel
+@{
+    ViewData["Title"] = "Modifica detalii contract";
+    ViewData["Description"] = $"ID Contract: {(Model.Contract is null ? "Necunoscut" : $"{Model.Contract.Id} (ID Loc de Consum: {Model.Contract.IdLocDeConsum})")}";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-uppercase">@ViewData["Title"]</h1>
+    <h2>@ViewData["Description"]</h2>
+
+    @if (Model.Contract is not null)
+    {
+        <form class="mt-5 d-flex flex-column gap-2" method="POST">
+            <div class="form-group row">
+                <label for="inputId" class="col-sm-2 col-form-label">ID</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputId" placeholder="ID" name="Id" value="@Model.Contract.Id" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputIdLocDeConsum" class="col-sm-2 col-form-label">ID Loc de Consum</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputIdLocDeConsum" placeholder="ID Loc de Consum" name="IdLocDeConsum" value="@Model.Contract.IdLocDeConsum">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputTipContract" class="col-sm-2 col-form-label">Tip contract</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputTipContract" placeholder="Tip contract" name="TipContract" value="@Model.Contract.TipContract">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputDataInceput" class="col-sm-2 col-form-label">Data inceput</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="inputDataInceput" placeholder="Data inceput" name="DataInceput" value="@Model.Contract.DataInceput.ToString("yyyy-MM-dd")">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputDataSfarsit" class="col-sm-2 col-form-label">Data sfarsit</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="inputDataSfarsit" placeholder="Data sfarsit" name="DataSfarsit" value="@Model.Contract.DataSfarsit.ToString("yyyy-MM-dd")">
+                </div>
+            </div>
+            <div class="d-flex justify-content-center gap-4">
+                <button type="submit" class="btn btn-success">Salveaza modificarile</button>
+            </div>
+        </form>
+    }
+</div>

@@ -1,0 +1,88 @@
+﻿@page "/LocuriDeConsum/{id:int}/Modifica"
+@using ProiectBD.Enums;
+@using ProiectBD.Pages.LocuriDeConsum;
+@model ModificaModel
+@{
+    ViewData["Title"] = "Modifica detalii loc de consum";
+    ViewData["Description"] = $"ID Loc de Consum: {(Model.LocDeConsum is null ? "Necunoscut" : $"{Model.LocDeConsum.Id} (ID Client: {Model.LocDeConsum.IdClient})")}";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-uppercase">@ViewData["Title"]</h1>
+    <h2>@ViewData["Description"]</h2>
+
+    @if (Model.LocDeConsum is not null)
+    {
+        <form class="mt-5 d-flex flex-column gap-2" method="POST">
+            <div class="form-group row">
+                <label for="inputId" class="col-sm-2 col-form-label">ID</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputId" placeholder="ID" name="Id" value="@Model.LocDeConsum.Id" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputIdClient" class="col-sm-2 col-form-label">ID Client</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputIdClient" placeholder="ID Client" name="IdClient" value="@Model.LocDeConsum.IdClient">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputJudet" class="col-sm-2 col-form-label">Judet</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputJudet" placeholder="Judet" name="Judet" value="@Model.LocDeConsum.Judet">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputLocalitate" class="col-sm-2 col-form-label">Localitate</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputLocalitate" placeholder="Localitate" name="Localitate" value="@Model.LocDeConsum.Localitate">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputStrada" class="col-sm-2 col-form-label">Strada</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputStrada" placeholder="Strada" name="Strada" value="@Model.LocDeConsum.Strada">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputNrStrada" class="col-sm-2 col-form-label">Numar strada</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputNrStrada" placeholder="Numar strada" name="NrStrada" value="@Model.LocDeConsum.NrStrada">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputCodPostal" class="col-sm-2 col-form-label">Cod postal</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputCodPostal" placeholder="Cod postal" name="CodPostal" value="@Model.LocDeConsum.CodPostal">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputBloc" class="col-sm-2 col-form-label">Bloc</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputBloc" placeholder="Bloc" name="Bloc" value="@Model.LocDeConsum.Bloc">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputScara" class="col-sm-2 col-form-label">Scara</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputScara" placeholder="Scara" name="Scara" value="@Model.LocDeConsum.Scara">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEtaj" class="col-sm-2 col-form-label">Etaj</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEtaj" placeholder="Etaj" name="Etaj" value="@Model.LocDeConsum.Etaj">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputApartament" class="col-sm-2 col-form-label">Apartament</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputApartament" placeholder="Apartament" name="Apartament" value="@Model.LocDeConsum.Apartament">
+                </div>
+            </div>
+            <div class="d-flex justify-content-center gap-4">
+                <button type="submit" class="btn btn-success">Salveaza modificarile</button>
+            </div>
+        </form>
+    }
+</div>

@@ -1,0 +1,52 @@
+﻿@page "/Reclamatii/{id:int}/Modifica"
+@using ProiectBD.Enums;
+@using ProiectBD.Pages.Reclamatii;
+@model ModificaModel
+@{
+    ViewData["Title"] = "Modifica detalii reclamatie";
+    ViewData["Description"] = $"ID Reclamatie: {(Model.Reclamatie is null ? "Necunoscut" : $"{Model.Reclamatie.Id} (ID Client: {Model.Reclamatie.IdClient})")}";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-uppercase">@ViewData["Title"]</h1>
+    <h2>@ViewData["Description"]</h2>
+
+    @if (Model.Reclamatie is not null)
+    {
+        <form class="mt-5 d-flex flex-column gap-2" method="POST">
+            <div class="form-group row">
+                <label for="inputId" class="col-sm-2 col-form-label">ID</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputId" placeholder="ID" name="Id" value="@Model.Reclamatie.Id" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputIdClient" class="col-sm-2 col-form-label">ID Client</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputIdClient" placeholder="ID Client" name="IdClient" value="@Model.Reclamatie.IdClient">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputInformatii" class="col-sm-2 col-form-label">Informatii</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputInformatii" placeholder="Informatii" name="Informatii" value="@Model.Reclamatie.Informatii">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputDataInregistrare" class="col-sm-2 col-form-label">Data inregistrare</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="inputDataInregistrare" placeholder="Data inregistrare" name="DataInregistrare" value="@Model.Reclamatie.DataInregistrare.ToString("yyyy-MM-dd")">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputDataSolutionare" class="col-sm-2 col-form-label">Data solutionare</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="inputDataSolutionare" placeholder="Data solutionare" name="DataSolutionare" value="@Model.Reclamatie.DataSolutionare?.ToString("yyyy-MM-dd")">
+                </div>
+            </div>
+            <div class="d-flex justify-content-center gap-4">
+                <button type="submit" class="btn btn-success">Salveaza modificarile</button>
+            </div>
+        </form>
+    }
+</div>

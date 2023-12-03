@@ -1,0 +1,47 @@
+﻿@page "/ClientiCuContractCareExpiraCurand"
+@using ProiectBD.Data;
+@using ProiectBD.Pages.Contracte;
+@model IndexModel
+@{
+    ViewData["Title"] = "Clientii din Bucuresti si Ilfov cu contract care expira sau au expirat";
+    ViewData["Description"] = "Lista tuturor clientilor din Bucuresti si Ilfov cu contract care expira in urmatoarele 30 de zile sau au expirat deja";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-uppercase">@ViewData["Title"]</h1>
+    <h2>@ViewData["Description"]</h2>
+
+    <div class="mt-5 table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nume</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Telefon</th>
+                    <th scope="col">Tip persoana</th>
+                    <th scope="col">Judet</th>
+                    <th scope="col">Localitate</th>
+                    <th scope="col">Tip contract</th>
+                    <th scope="col">Data inceput</th>
+                    <th scope="col">Data sfarsit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var client in Model.Clienti)
+                {
+                    <tr>
+                        <td>@client.Nume</td>
+                        <td><a href="mailto:@client.Email" class="text-decoration-none text-muted">@client.Email</a></td>
+                        <td><a href="tel:@client.Telefon" class="text-decoration-none text-muted">@client.Telefon</a></td>
+                        <td>@client.TipPersoana</td>
+                        <td>@client.Judet</td>
+                        <td>@client.Localitate</td>
+                        <td>@client.TipContract</td>
+                        <td>@client.DataInceput.ToString("dd.MM.yyyy")</td>
+                        <td>@client.DataSfarsit.ToString("dd.MM.yyyy")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

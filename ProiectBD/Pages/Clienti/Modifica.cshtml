@@ -1,0 +1,59 @@
+﻿@page "/Clienti/{id:int}/Modifica"
+@using ProiectBD.Enums;
+@using ProiectBD.Pages.Clienti;
+@model ModificaModel
+@{
+    ViewData["Title"] = "Modifica detalii client";
+    ViewData["Description"] = $"Client: {(Model.Client is null ? "Necunoscut" : $"{Model.Client.Nume} (ID: {Model.Client.Id})")}";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-uppercase">@ViewData["Title"]</h1>
+    <h2>@ViewData["Description"]</h2>
+
+    @if (Model.Client is not null)
+    {
+        <form class="mt-5 d-flex flex-column gap-2" method="POST">
+            <div class="form-group row">
+                <label for="inputId" class="col-sm-2 col-form-label">ID</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputId" placeholder="ID" name="Id" value="@Model.Client.Id" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputNume" class="col-sm-2 col-form-label">Nume</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputNume" placeholder="Nume" name="Nume" value="@Model.Client.Nume">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail" class="col-sm-2 col-form-label">E-mail</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="E-mail" name="Email" value="@Model.Client.Email">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputTelefon" class="col-sm-2 col-form-label">Telefon</label>
+                <div class="col-sm-10">
+                    <input type="tel" class="form-control" id="inputTelefon" placeholder="Telefon" name="Telefon" value="@Model.Client.Telefon">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputTipPersoana" class="col-sm-2 col-form-label">Tip persoana</label>
+                <div class="col-sm-auto align-self-center">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="TipPersoana" id="inputTipPersoanaF" value="@TipPersoana.F" checked="@(Model.Client.TipPersoana == @TipPersoana.F ? "checked" : null)">
+                        <label class="form-check-label" for="inputTipPersoanaF">Persoana fizica</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="TipPersoana" id="inputTipPersoanaJ" value="@TipPersoana.J" checked="@(Model.Client.TipPersoana == @TipPersoana.J ? " checked" : null)">
+                        <label class="form-check-label" for="inputTipPersoanaJ">Persoana juridica</label>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center gap-4">
+                <button type="submit" class="btn btn-success">Salveaza modificarile</button>
+            </div>
+        </form>
+    }
+</div>

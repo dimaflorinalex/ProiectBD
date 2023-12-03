@@ -1,0 +1,39 @@
+﻿@page "/ClientiTopIncasare"
+@using ProiectBD.Data;
+@using ProiectBD.Pages.ClientiTopIncasare;
+@model IndexModel
+@{
+    ViewData["Title"] = "Clasament incasari pe client";
+    ViewData["Description"] = "Lista tuturor incasarilor pe client";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-uppercase">@ViewData["Title"]</h1>
+    <h2>@ViewData["Description"]</h2>
+
+    <div class="mt-5 table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nume</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Telefon</th>
+                    <th scope="col">Tip persoana</th>
+                    <th scope="col">Suma</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var client in Model.Clienti)
+                {
+                    <tr>
+                        <td>@client.Nume</td>
+                        <td><a href="mailto:@client.Email" class="text-decoration-none text-muted">@client.Email</a></td>
+                        <td><a href="tel:@client.Telefon" class="text-decoration-none text-muted">@client.Telefon</a></td>
+                        <td>@client.TipPersoana</td>
+                        <td>@client.Suma</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

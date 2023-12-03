@@ -1,0 +1,60 @@
+﻿@page "/Indecsi"
+@using ProiectBD.Data;
+@using Index = ProiectBD.Data.Index;
+@using ProiectBD.Pages.Indecsi;
+@model IndexModel
+@{
+    ViewData["Title"] = "Indecsi";
+    ViewData["Description"] = "Lista tuturor indecsilor";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-uppercase">@ViewData["Title"]</h1>
+    <h2>@ViewData["Description"]</h2>
+
+    <div class="mt-5 table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Id loc de consum</th>
+                    <th scope="col">Tip index</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Valoare</th>
+                    <th scope="col" colspan="2">Actiune</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var index in Model.Indecsi)
+                {
+                    <tr>
+                        <td>@index.Id</td>
+                        <td>@index.IdLocDeConsum</td>
+                        <td>@index.TipIndex</td>
+                        <td>@index.Data.ToString("dd.MM.yyyy")</td>
+                        <td>@index.Valoare</td>
+                        <td><a asp-page="/Indecsi/Modifica" asp-route-id="@index.Id" class="text-decoration-none text-success">Modifica</a></td>
+                        <td><a asp-page="/Indecsi/Sterge" asp-route-id="@index.Id" class="text-decoration-none text-danger">Sterge</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <form class="d-flex gap-2" method="get">
+        <select class="form-select" name="orderBy" id="inputOrderBy" title="Sorteaza dupa coloana">
+            <option value="NESORTAT" selected="@(Model.OrderBy == "NESORTAT" ? "selected" : null)">NESORTAT</option>
+            @foreach (var column in Index.Columns.SortableColumns)
+            {
+                <option value="@column" selected="@(Model.OrderBy == @column ? "selected" : null)">@column</option>
+            }
+        </select>
+
+        <select class="form-select" name="orderDir" id="inputOrderDir" title="Sensul sortarii">
+            <option value="ASC" selected="@(Model.OrderDir == "ASC" ? "selected" : null)">CRESCATOR</option>
+            <option value="DESC" selected="@(Model.OrderDir == "DESC" ? "selected" : null)">DESCRESCATOR</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary">Sorteaza</button>
+    </form>
+</div>
