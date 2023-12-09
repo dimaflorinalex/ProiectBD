@@ -100,117 +100,117 @@ CREATE OR REPLACE VIEW V_TOP_INCASARI_CLIENTI (ID, NUME, EMAIL, TELEFON, TIP_PER
     ORDER BY SUMA DESC;
 
 INSERT INTO CLIENTI (NUME, EMAIL, TELEFON, TIP_PERSOANA)
-    WITH CTE AS (
-        SELECT 'Aggy Halsted', 'ahalsted0@ifeng.com', '4055194554', 'F' FROM DUAL
-        UNION ALL SELECT 'Adele O''Lunney', 'aolunney1@goodreads.com', '7617195084', 'F' FROM DUAL
-        UNION ALL SELECT 'Drud Lotte', 'dlotte2@cisco.com', '4507536389', 'F' FROM DUAL
-        UNION ALL SELECT 'Jenifer Challicum', 'jchallicum3@spiegel.de', '7249526949', 'F' FROM DUAL
-        UNION ALL SELECT 'Jessie Panons', 'jpanons4@artisteer.com', '4383520378', 'F' FROM DUAL
-        UNION ALL SELECT 'Bondy Storrar', 'bstorrar5@digg.com', '9323904547', 'F' FROM DUAL
-        UNION ALL SELECT 'Devora Tollerfield', 'dtollerfield6@blogtalkradio.com', '3137531027', 'F' FROM DUAL
-        UNION ALL SELECT 'Magdaia Ridesdale', 'mridesdale7@eepurl.com', '3382807785', 'F' FROM DUAL
-        UNION ALL SELECT 'Dottie Torbet', 'dtorbet8@twitter.com', '9426159703', 'J' FROM DUAL
-        UNION ALL SELECT 'Neddy McHenry', 'nmchenry9@toplist.cz', '4789764307', 'J' FROM DUAL
-        UNION ALL SELECT 'Kinnie Tschursch', 'ktschurscha@plala.or.jp', '9106774683', 'F' FROM DUAL
-        UNION ALL SELECT 'Patrizio Fredson', 'pfredsonb@slate.com', '1035058234', 'J' FROM DUAL
-        UNION ALL SELECT 'Sergei Rizzello', 'srizzelloc@nature.com', '9067076284', 'J' FROM DUAL
-        UNION ALL SELECT 'Jacqueline Deaconson', 'jdeaconsond@auda.org.au', '9536372518', 'J' FROM DUAL
-        UNION ALL SELECT 'Cristal Caldeiro', 'ccaldeiroe@odnoklassniki.ru', '1567906560', 'F' FROM DUAL
-        UNION ALL SELECT 'Ezmeralda Allain', 'eallainf@redcross.org', '8114294076', 'J' FROM DUAL
-        UNION ALL SELECT 'Tabbi Maggiore', 'tmaggioreg@angelfire.com', '7195301328', 'J' FROM DUAL
-        UNION ALL SELECT 'Arvie Thornber', 'athornberh@indiegogo.com', '3178104082', 'J' FROM DUAL
-        UNION ALL SELECT 'Brynna Foch', 'bfochi@people.com.cn', '8028314568', 'F' FROM DUAL
-        UNION ALL SELECT 'Louisa Saxby', 'lsaxbyj@discuz.net', '8439835632', 'J' FROM DUAL
-        UNION ALL SELECT 'Candra Ingles', 'cinglesk@php.net', '2914466862', 'F' FROM DUAL
-        UNION ALL SELECT 'Ronni Ros', 'rrosl@xing.com', '4953596213', 'J' FROM DUAL
-        UNION ALL SELECT 'Hy Kinver', 'hkinverm@ca.gov', '5855817260', 'J' FROM DUAL
-        UNION ALL SELECT 'Kenna Caseley', 'kcaseleyn@ovh.net', '5133129169', 'J' FROM DUAL
-        UNION ALL SELECT 'Fabian Lazare', 'flazareo@amazon.de', '6432481792', 'F' FROM DUAL
-        UNION ALL SELECT 'Dulcinea Buckles', 'dbucklesp@parallels.com', '9082682313', 'F' FROM DUAL
-        UNION ALL SELECT 'Nicolis Iliffe', 'niliffeq@salon.com', '7478445993', 'J' FROM DUAL
-        UNION ALL SELECT 'Earlie Shevlin', 'eshevlinr@odnoklassniki.ru', '7424610511', 'F' FROM DUAL
-        UNION ALL SELECT 'Ernaline Shenfish', 'eshenfishs@i2i.jp', '9928152587', 'J' FROM DUAL
-        UNION ALL SELECT 'Berny Veque', 'bvequet@imgur.com', '5446665128', 'F' FROM DUAL
-    )
-    SELECT * FROM CTE;
+WITH CTE AS (
+              SELECT 'Aggy Halsted', 'ahalsted0@ifeng.com', '4055194554', 'F' FROM DUAL
+    UNION ALL SELECT 'Adele O''Lunney', 'aolunney1@goodreads.com', '7617195084', 'F' FROM DUAL
+    UNION ALL SELECT 'Drud Lotte', 'dlotte2@cisco.com', '4507536389', 'F' FROM DUAL
+    UNION ALL SELECT 'Jenifer Challicum', 'jchallicum3@spiegel.de', '7249526949', 'F' FROM DUAL
+    UNION ALL SELECT 'Jessie Panons', 'jpanons4@artisteer.com', '4383520378', 'F' FROM DUAL
+    UNION ALL SELECT 'Bondy Storrar', 'bstorrar5@digg.com', '9323904547', 'F' FROM DUAL
+    UNION ALL SELECT 'Devora Tollerfield', 'dtollerfield6@blogtalkradio.com', '3137531027', 'F' FROM DUAL
+    UNION ALL SELECT 'Magdaia Ridesdale', 'mridesdale7@eepurl.com', '3382807785', 'F' FROM DUAL
+    UNION ALL SELECT 'Dottie Torbet', 'dtorbet8@twitter.com', '9426159703', 'J' FROM DUAL
+    UNION ALL SELECT 'Neddy McHenry', 'nmchenry9@toplist.cz', '4789764307', 'J' FROM DUAL
+    UNION ALL SELECT 'Kinnie Tschursch', 'ktschurscha@plala.or.jp', '9106774683', 'F' FROM DUAL
+    UNION ALL SELECT 'Patrizio Fredson', 'pfredsonb@slate.com', '1035058234', 'J' FROM DUAL
+    UNION ALL SELECT 'Sergei Rizzello', 'srizzelloc@nature.com', '9067076284', 'J' FROM DUAL
+    UNION ALL SELECT 'Jacqueline Deaconson', 'jdeaconsond@auda.org.au', '9536372518', 'J' FROM DUAL
+    UNION ALL SELECT 'Cristal Caldeiro', 'ccaldeiroe@odnoklassniki.ru', '1567906560', 'F' FROM DUAL
+    UNION ALL SELECT 'Ezmeralda Allain', 'eallainf@redcross.org', '8114294076', 'J' FROM DUAL
+    UNION ALL SELECT 'Tabbi Maggiore', 'tmaggioreg@angelfire.com', '7195301328', 'J' FROM DUAL
+    UNION ALL SELECT 'Arvie Thornber', 'athornberh@indiegogo.com', '3178104082', 'J' FROM DUAL
+    UNION ALL SELECT 'Brynna Foch', 'bfochi@people.com.cn', '8028314568', 'F' FROM DUAL
+    UNION ALL SELECT 'Louisa Saxby', 'lsaxbyj@discuz.net', '8439835632', 'J' FROM DUAL
+    UNION ALL SELECT 'Candra Ingles', 'cinglesk@php.net', '2914466862', 'F' FROM DUAL
+    UNION ALL SELECT 'Ronni Ros', 'rrosl@xing.com', '4953596213', 'J' FROM DUAL
+    UNION ALL SELECT 'Hy Kinver', 'hkinverm@ca.gov', '5855817260', 'J' FROM DUAL
+    UNION ALL SELECT 'Kenna Caseley', 'kcaseleyn@ovh.net', '5133129169', 'J' FROM DUAL
+    UNION ALL SELECT 'Fabian Lazare', 'flazareo@amazon.de', '6432481792', 'F' FROM DUAL
+    UNION ALL SELECT 'Dulcinea Buckles', 'dbucklesp@parallels.com', '9082682313', 'F' FROM DUAL
+    UNION ALL SELECT 'Nicolis Iliffe', 'niliffeq@salon.com', '7478445993', 'J' FROM DUAL
+    UNION ALL SELECT 'Earlie Shevlin', 'eshevlinr@odnoklassniki.ru', '7424610511', 'F' FROM DUAL
+    UNION ALL SELECT 'Ernaline Shenfish', 'eshenfishs@i2i.jp', '9928152587', 'J' FROM DUAL
+    UNION ALL SELECT 'Berny Veque', 'bvequet@imgur.com', '5446665128', 'F' FROM DUAL
+)
+SELECT * FROM CTE;
 
 INSERT INTO LOCURI_DE_CONSUM (ID_CLIENT, JUDET, LOCALITATE, STRADA, NUMAR_STRADA, COD_POSTAL, BLOC, SCARA, ETAJ, APARTAMENT)
-    WITH CTE AS (
-        SELECT 1, 'Bucuresti', 'Sector 6', 'Lujerului', 14, '012345', 'B2', '3', 4, 11 FROM DUAL
-        UNION ALL SELECT 1, 'Bucuresti', 'Sector 4', 'Lujerului', 12, '012347', 'B4', '6', 6, 12 FROM DUAL
-        UNION ALL SELECT 2, 'Bucuresti', 'Sector 5', 'Lujerului', 13, '012346', 'B3', '5', 5, 10 FROM DUAL
-        UNION ALL SELECT 3, 'Ilfov', 'Bragadiru', 'Intrarea Zorelelor', 2, '012346', NULL, NULL, NULL, NULL FROM DUAL
-        UNION ALL SELECT 4, 'Ilfov', 'Bragadiru', 'Intrarea Zorelelor', 3, '012347', NULL, NULL, NULL, NULL FROM DUAL
-        UNION ALL SELECT 5, 'Ilfov', 'Bragadiru', 'Intrarea Zorelelor', 4, '012346', '4', '3', 2, 7 FROM DUAL
-        UNION ALL SELECT 6, 'Ilfov', 'Bragadiru', 'Intrarea Zorelelor', 5, '012347', NULL, NULL, NULL, NULL FROM DUAL
-        UNION ALL SELECT 7, 'Ilfov', 'Bragadiru', 'Intrarea Zorelelor', 1, '012346', NULL, NULL, NULL, NULL FROM DUAL
-        UNION ALL SELECT 8, 'Brasov', 'Brasov', 'Calea Bucuresti', 3, '042346', 'C7', '2', 3, 9 FROM DUAL
-        UNION ALL SELECT 9, 'Calarasi', 'Calarasi', 'Aleea X', 2, '012676', '11', '3', 1, 4 FROM DUAL
-        UNION ALL SELECT 10, 'Ilfov', 'Bragadiru', 'Intrarea Zorelelor', 8, '012346', NULL, NULL, NULL, NULL FROM DUAL
-    )
-    SELECT * FROM CTE;
+WITH CTE AS (
+              SELECT 1, 'Bucuresti', 'Sector 6', 'Lujerului', 14, '012345', 'B2', '3', 4, 11 FROM DUAL
+    UNION ALL SELECT 1, 'Bucuresti', 'Sector 4', 'Lujerului', 12, '012347', 'B4', '6', 6, 12 FROM DUAL
+    UNION ALL SELECT 2, 'Bucuresti', 'Sector 5', 'Lujerului', 13, '012346', 'B3', '5', 5, 10 FROM DUAL
+    UNION ALL SELECT 3, 'Ilfov', 'Bragadiru', 'Intrarea Zorelelor', 2, '012346', NULL, NULL, NULL, NULL FROM DUAL
+    UNION ALL SELECT 4, 'Ilfov', 'Bragadiru', 'Intrarea Zorelelor', 3, '012347', NULL, NULL, NULL, NULL FROM DUAL
+    UNION ALL SELECT 5, 'Ilfov', 'Bragadiru', 'Intrarea Zorelelor', 4, '012346', '4', '3', 2, 7 FROM DUAL
+    UNION ALL SELECT 6, 'Ilfov', 'Bragadiru', 'Intrarea Zorelelor', 5, '012347', NULL, NULL, NULL, NULL FROM DUAL
+    UNION ALL SELECT 7, 'Ilfov', 'Bragadiru', 'Intrarea Zorelelor', 1, '012346', NULL, NULL, NULL, NULL FROM DUAL
+    UNION ALL SELECT 8, 'Brasov', 'Brasov', 'Calea Bucuresti', 3, '042346', 'C7', '2', 3, 9 FROM DUAL
+    UNION ALL SELECT 9, 'Calarasi', 'Calarasi', 'Aleea X', 2, '012676', '11', '3', 1, 4 FROM DUAL
+    UNION ALL SELECT 10, 'Ilfov', 'Bragadiru', 'Intrarea Zorelelor', 8, '012346', NULL, NULL, NULL, NULL FROM DUAL
+)
+SELECT * FROM CTE;
 
 INSERT INTO RECLAMATII (ID_CLIENT, INFORMATII, DATA_INREGISTRARE, DATA_SOLUTIONARE)
-    WITH CTE AS (
-        SELECT 1, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', '18-11-2023', '19-11-2023' FROM DUAL
-        UNION ALL SELECT 2, 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout', '19-11-2023', '24-11-2023' FROM DUAL
-        UNION ALL SELECT 1, 'Contrary to popular belief, Lorem Ipsum is not simply random text', '20-11-2023', NULL FROM DUAL
-        UNION ALL SELECT 3, 'It is a long established fact that a reader will be distracted by the readable content of a page', '19-11-2023', NULL FROM DUAL
-        UNION ALL SELECT 4, 'Lorem Ipsum is simply dummy text', '19-11-2023', NULL FROM DUAL
-    )
-    SELECT * FROM CTE;
+WITH CTE AS (
+              SELECT 1, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', '18-11-2023', '19-11-2023' FROM DUAL
+    UNION ALL SELECT 2, 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout', '19-11-2023', '24-11-2023' FROM DUAL
+    UNION ALL SELECT 1, 'Contrary to popular belief, Lorem Ipsum is not simply random text', '20-11-2023', NULL FROM DUAL
+    UNION ALL SELECT 3, 'It is a long established fact that a reader will be distracted by the readable content of a page', '19-11-2023', NULL FROM DUAL
+    UNION ALL SELECT 4, 'Lorem Ipsum is simply dummy text', '19-11-2023', NULL FROM DUAL
+)
+SELECT * FROM CTE;
 
 INSERT INTO INDECSI (ID_LOC_DE_CONSUM, TIP_INDEX, DATA, VALOARE)
-    WITH CTE AS (
-        SELECT 1, 'CITIRE', '18-11-2023', 162 FROM DUAL
-        UNION ALL SELECT 1, 'AUTOCITIRE', '25-11-2023', 300 FROM DUAL
-        UNION ALL SELECT 2, 'CITIRE', '19-11-2023', 172 FROM DUAL
-        UNION ALL SELECT 2, 'AUTOCITIRE', '25-11-2023', 204 FROM DUAL
-        UNION ALL SELECT 3, 'ESTIMARE', '20-11-2023', 172 FROM DUAL
-        UNION ALL SELECT 3, 'ESTIMARE', '03-12-2023', 242 FROM DUAL
-        UNION ALL SELECT 4, 'CITIRE', '21-11-2023', 124 FROM DUAL
-        UNION ALL SELECT 4, 'CITIRE', '01-12-2023', 274 FROM DUAL
-        UNION ALL SELECT 5, 'ESTIMARE', '20-11-2023', 184 FROM DUAL
-        UNION ALL SELECT 5, 'ESTIMARE', '03-12-2023', 252 FROM DUAL
-    )
-    SELECT * FROM CTE;
+WITH CTE AS (
+              SELECT 1, 'CITIRE', '18-11-2023', 162 FROM DUAL
+    UNION ALL SELECT 1, 'AUTOCITIRE', '25-11-2023', 300 FROM DUAL
+    UNION ALL SELECT 2, 'CITIRE', '19-11-2023', 172 FROM DUAL
+    UNION ALL SELECT 2, 'AUTOCITIRE', '25-11-2023', 204 FROM DUAL
+    UNION ALL SELECT 3, 'ESTIMARE', '20-11-2023', 172 FROM DUAL
+    UNION ALL SELECT 3, 'ESTIMARE', '03-12-2023', 242 FROM DUAL
+    UNION ALL SELECT 4, 'CITIRE', '21-11-2023', 124 FROM DUAL
+    UNION ALL SELECT 4, 'CITIRE', '01-12-2023', 274 FROM DUAL
+    UNION ALL SELECT 5, 'ESTIMARE', '20-11-2023', 184 FROM DUAL
+    UNION ALL SELECT 5, 'ESTIMARE', '03-12-2023', 252 FROM DUAL
+)
+SELECT * FROM CTE;
 
 INSERT INTO CONTRACTE (ID_LOC_DE_CONSUM, TIP_CONTRACT, DATA_INCEPUT, DATA_SFARSIT)
-    WITH CTE AS (
-        SELECT 1, 'OFERTA1', '21-11-2023', '31-12-2023' FROM DUAL
-        UNION ALL SELECT 2, 'OFERTA2', '21-11-2023', '31-12-2023' FROM DUAL
-        UNION ALL SELECT 3, 'OFERTA1', '21-11-2023', '31-12-2023' FROM DUAL
-        UNION ALL SELECT 4, 'OFERTA2', '16-11-2023', '31-12-2023' FROM DUAL
-        UNION ALL SELECT 5, 'OFERTA1', '20-11-2023', '25-01-2024' FROM DUAL
-        UNION ALL SELECT 6, 'OFERTA1', '15-11-2023', '26-01-2024' FROM DUAL
-        UNION ALL SELECT 7, 'OFERTA1', '14-11-2023', '31-12-2024' FROM DUAL
-        UNION ALL SELECT 8, 'OFERTA2', '13-11-2023', '31-03-2024' FROM DUAL
-        UNION ALL SELECT 9, 'OFERTA3', '12-11-2023', '31-05-2024' FROM DUAL
-        UNION ALL SELECT 10, 'OFERTA4', '10-11-2023', '31-07-2024' FROM DUAL
-    )
-    SELECT * FROM CTE;
+WITH CTE AS (
+              SELECT 1, 'OFERTA1', '21-11-2023', '31-12-2023' FROM DUAL
+    UNION ALL SELECT 2, 'OFERTA2', '21-11-2023', '31-12-2023' FROM DUAL
+    UNION ALL SELECT 3, 'OFERTA1', '21-11-2023', '31-12-2023' FROM DUAL
+    UNION ALL SELECT 4, 'OFERTA2', '16-11-2023', '31-12-2023' FROM DUAL
+    UNION ALL SELECT 5, 'OFERTA1', '20-11-2023', '25-01-2024' FROM DUAL
+    UNION ALL SELECT 6, 'OFERTA1', '15-11-2023', '26-01-2024' FROM DUAL
+    UNION ALL SELECT 7, 'OFERTA1', '14-11-2023', '31-12-2024' FROM DUAL
+    UNION ALL SELECT 8, 'OFERTA2', '13-11-2023', '31-03-2024' FROM DUAL
+    UNION ALL SELECT 9, 'OFERTA3', '12-11-2023', '31-05-2024' FROM DUAL
+    UNION ALL SELECT 10, 'OFERTA4', '10-11-2023', '31-07-2024' FROM DUAL
+)
+SELECT * FROM CTE;
 
 INSERT INTO FACTURI (ID_CONTRACT, DATA_EMITERE, DATA_SCADENTA, VALOARE)
-    WITH CTE AS (
-        SELECT 1, '20-11-2023', '30-11-2023', 142.72 FROM DUAL
-        UNION ALL SELECT 2, '20-11-2023', '30-11-2023', 197.16 FROM DUAL
-        UNION ALL SELECT 3, '20-11-2023', '30-11-2023', 209.14 FROM DUAL
-        UNION ALL SELECT 4, '01-12-2023', '31-12-2023', 492.16 FROM DUAL
-        UNION ALL SELECT 5, '01-12-2023', '31-12-2023', 472.72 FROM DUAL
-        UNION ALL SELECT 3, '01-12-2023', '31-12-2023', 39.47 FROM DUAL
-    )
-    SELECT * FROM CTE;
+WITH CTE AS (
+              SELECT 1, '20-11-2023', '30-11-2023', 142.72 FROM DUAL
+    UNION ALL SELECT 2, '20-11-2023', '30-11-2023', 197.16 FROM DUAL
+    UNION ALL SELECT 3, '20-11-2023', '30-11-2023', 209.14 FROM DUAL
+    UNION ALL SELECT 4, '01-12-2023', '31-12-2023', 492.16 FROM DUAL
+    UNION ALL SELECT 5, '01-12-2023', '31-12-2023', 472.72 FROM DUAL
+    UNION ALL SELECT 3, '01-12-2023', '31-12-2023', 39.47 FROM DUAL
+)
+SELECT * FROM CTE;
 
 INSERT INTO INCASARI (ID_FACTURA, DATA, VALOARE)
-    WITH CTE AS (
-        SELECT 1, '21-11-2023', 112.72 FROM DUAL
-        UNION ALL SELECT 2, '21-11-2023', 197.16 FROM DUAL
-        UNION ALL SELECT 1, '21-11-2023', 30 FROM DUAL
-        UNION ALL SELECT 3, '01-12-2023', 200.15 FROM DUAL
-        UNION ALL SELECT 4, '01-12-2023', 493 FROM DUAL
-        UNION ALL SELECT 5, '01-12-2023', 472.72 FROM DUAL
-        UNION ALL SELECT 6, '01-12-2023', 39.47 FROM DUAL
-    )
-    SELECT * FROM CTE;
+WITH CTE AS (
+              SELECT 1, '21-11-2023', 112.72 FROM DUAL
+    UNION ALL SELECT 2, '21-11-2023', 197.16 FROM DUAL
+    UNION ALL SELECT 1, '21-11-2023', 30 FROM DUAL
+    UNION ALL SELECT 3, '01-12-2023', 200.15 FROM DUAL
+    UNION ALL SELECT 4, '01-12-2023', 493 FROM DUAL
+    UNION ALL SELECT 5, '01-12-2023', 472.72 FROM DUAL
+    UNION ALL SELECT 6, '01-12-2023', 39.47 FROM DUAL
+)
+SELECT * FROM CTE;
 
 COMMIT;
