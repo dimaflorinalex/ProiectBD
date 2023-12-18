@@ -32,8 +32,8 @@
                     <tr>
                         <td>@reclamatie.IdReclamatie</td>
                         <td>@reclamatie.Informatii</td>
-                        <td>@reclamatie.DataInregistrare</td>
-                        <td>@reclamatie.DataSolutionare</td>
+                        <td>@reclamatie.DataInregistrare.ToString("dd.MM.yyyy")</td>
+                        <td>@reclamatie.DataSolutionare?.ToString("dd.MM.yyyy")</td>
                         <td>@reclamatie.IdClient</td>
                         <td>@reclamatie.Nume</td>
                         <td><a href="mailto:@reclamatie.Email" class="text-decoration-none text-muted">@reclamatie.Email</a></td>
