@@ -15,18 +15,30 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Id client</th>
+                    <th scope="col">Id reclamatie</th>
                     <th scope="col">Informatii</th>
+                    <th scope="col">Data inregistrare</th>
+                    <th scope="col">Data solutionare</th>
+                    <th scope="col">Id client</th>
+                    <th scope="col">Nume</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Telefon</th>
+                    <th scope="col">Tip persoana</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var reclamatie in Model.Reclamatii)
                 {
                     <tr>
-                        <td>@reclamatie.Id</td>
-                        <td>@reclamatie.IdClient</td>
+                        <td>@reclamatie.IdReclamatie</td>
                         <td>@reclamatie.Informatii</td>
+                        <td>@reclamatie.DataInregistrare</td>
+                        <td>@reclamatie.DataSolutionare</td>
+                        <td>@reclamatie.IdClient</td>
+                        <td>@reclamatie.Nume</td>
+                        <td>@reclamatie.Email</td>
+                        <td>@reclamatie.Telefon</td>
+                        <td>@reclamatie.TipPersoana</td>
                     </tr>
                 }
             </tbody>
