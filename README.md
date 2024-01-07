@@ -4,7 +4,7 @@
 
 #### Tehnologii utilizate
 - Backend: C#, .NET 7, ASP.NET Core 7, Razor Pages
-- Frontend: HTML, CSS, Bootstrap
+- Frontend: HTML, CSS, Bootstrap 5.3.2
 - Database: Oracle Database 21c Express Edition, PL/SQL
 
 #### Configurarea aplicației
