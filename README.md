@@ -8,4 +8,4 @@
 - Database: Oracle Database 21c Express Edition, PL/SQL
 
 #### Configurarea aplicației
-1. appsettings.json - ConnectionStrings - DataContext: Connection String pentru baza de date la care dorim sa conectam aplicatia web. Exemplu: "Data Source=localhost:1521/xe;User Id=FURNIZARE_ENERGIE;Password=12345"
+1. appsettings.json - ConnectionStrings - DataContext: Connection String pentru baza de date la care dorim să conectăm aplicația web. Exemplu: "Data Source=localhost:1521/xe;User Id=FURNIZARE_ENERGIE;Password=12345"
